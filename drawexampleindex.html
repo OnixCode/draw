@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML5 Draw</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/css/main.css" type="text/css">
+  </head>
+
+  <body>
+    <h1>HTML Starter</h1>
+
+    <canvas style="border: 1px solid #000;" id="canvas" height="600px" width="800px"></canvas>
+    
+    <script>
+      
+      var x = Math.random() * 700;
+      var y = Math.random() * 500;
+      
+      var canvas = document.getElementById('canvas');
+      //draw on the context versus the canvas
+      var ctx = canvas.getContext('2d') //loads 2d rendering engine
+      ctx.fillStyle = '#' + Math.floor(Math.random()*16777215).toString(16);
+      ctx.fillRect(x, y, 100, 100); // drawing a rectangle arguments x (left and right from top left corner of screen) y(up and down from top left corner of screen) width height
+
+      //Create a circle
+      ctx.fillStyle = '#' + Math.floor(Math.random()*16777215).toString(16); //Set syling code before what you draw
+      ctx.beginPath();
+      ctx.arc(230, 400, 83, 0, 2 * Math.PI); // dot starts in the middle of the circle arguments x from left to center dot, y from top to center dot, radius is half width of the circle, starting point for arc, multiply by PI
+      ctx.stroke();
+
+    </script>
+
+    <script src="./dist/js/main.js"></script>
+  </body>
+</html>
